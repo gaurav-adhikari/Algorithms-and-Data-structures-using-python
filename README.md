@@ -1,3 +1,3 @@
 # Algorithms-and-Data-structures-using-python
 
-This is a repository that I intend to contribute for a long time. This repository will hold all the python algorithmic challenges which I will solve. Thank you Happy leaarning
+This is a repository that I intend to contribute for a long time. This repository will hold all the python algorithmic challenges which I will solve. I am giving atleast 30 minutes or an algorithm per day, every single day. Happy learning
