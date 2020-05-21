@@ -28,16 +28,22 @@ class MyStack:
         return self.items == []
     
 
-# Creating an instance of MyStack Class
-stack = MyStack()
+def main():
+    # Creating an instance of MyStack Class
+    stack = MyStack()
+
+    # Testing memeber functions
+    print(stack.push('gaurav'))
+    print(stack.peek())
+    print(stack.size())
+    print(stack.pop())
+    print(stack.size())
 
 
-# Testing memeber functions
-print(stack.push('gaurav'))
-print(stack.peek())
-print(stack.size())
-print(stack.pop())
-print(stack.size())
+if __name__=="__main__":
+    main()
+    
+
 
 
 '''
