@@ -1,6 +1,5 @@
 # Implemention of a node of Linked List
 
-
 class LinkedListNode:
 
     def __init__(self, headData):
@@ -25,11 +24,13 @@ class UnorderedList:
     def __init__(self):
         self.head = None
 
+    # Requires list traversal so complexity is O(n)
     def add(self, item):
         tempNode = LinkedListNode(item)
         tempNode.setNextData(self.head)
         self.head = tempNode
 
+    # Requires list traversal so complexity is O(n)
     def getListSize(self):
         currentNode = self.head
         nodeCount = 0
@@ -40,9 +41,11 @@ class UnorderedList:
 
         return nodeCount
 
+    # O(1) complexity 
     def isEmpty(self):
         return self.head == None
 
+    # Requires list traversal so complexity is O(n)
     def searchList(self, searchItem):
 
         currentNode = self.head
@@ -59,6 +62,7 @@ class UnorderedList:
 
         return -1
 
+    # Requires list traversal so complexity is O(n)
     def removeNode(self, removeItem):
 
         currentNode = self.head
@@ -79,7 +83,6 @@ class UnorderedList:
             self.head = currentNode.getNextData()
         else:
             previousNode.setNextData(currentNode.getNextData())
-
 
 def main():
 
@@ -110,6 +113,15 @@ def main():
     pass
 
 
-
 if __name__ == '__main__':
     main()
+
+
+
+
+'''
+ Conclusion
+            -> Implemented different LinkedList operations
+            -> OOP is beautiful
+
+'''
