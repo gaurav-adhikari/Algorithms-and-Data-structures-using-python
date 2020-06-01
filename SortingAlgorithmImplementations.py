@@ -2,7 +2,7 @@
 
 
 # complexity O(n^2)
-def sort(mylist):
+def bubbleSort(mylist):
 
     for i in range(len(mylist)-1):
 
@@ -14,27 +14,65 @@ def sort(mylist):
 
                 temp = mylist[j]
                 mylist[j] = mylist[j+1]
-                mylist[j+1]=temp
+                mylist[j+1] = temp
 
-            print(mylist)
-    
+    return mylist
+
+# Complexity O(nlog(n)) 
+def mergeSort(mylist):
+
+    length = len(mylist)
+
+    if length > 1:
+
+        # Divide the list and separate the list
+        mid = length//2
+        l = mylist[:mid]
+        r = mylist[mid:]
+
+        mergeSort(l)
+        mergeSort(r)
+
+        i=j=k=0
+        while i<len(l) and j<len(r):
+        
+            if l[i]<r[j]:
+                mylist[k]=l[i]
+                i+=1
+            else:
+                mylist[k]=r[j]
+                j+=1
+            k+=1
+
+        while i < len(l): 
+            mylist[k] = l[i] 
+            i+=1
+            k+=1
+          
+        while j < len(r): 
+            mylist[k] = r[j] 
+            j+=1
+            k+=1
+        
     return mylist 
-
 
 def main():
 
     a = [56, 74, 23, 48, 89, 5, 10]
-    print("sorted list is \n", sort(a))
 
+    # assert bubbleSort(a) == [1,5, 10, 23, 48, 56, 74, 89]
+
+    print(mergeSort(a))
+    # assert mergeSort(a) == [1,5, 10, 23, 48, 56, 74, 89]
     pass
+
 
 if __name__ == "__main__":
     main()
 
-
-
 '''
  Conclusion
             -> Bubble sort took about 0.066 seconds to complete
-            
+            -> Merge sort took about approx half the time as that of Bubble sort
+            -> Divide and conquer solves a lot boiler-plate code  
 '''
