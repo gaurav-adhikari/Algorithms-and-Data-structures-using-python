@@ -75,6 +75,23 @@ def selectionSort(myarray):
     return myarray
 
 
+
+
+
+
+def quickSort(myarray[],lIndex,hIndex):
+
+    if low<high:
+        
+        # pivot=quickSortPartitionFunction(myarray[],lIndex,hIndex)
+
+        quickSort(myarray[],lIndex,pivot-1)
+        quickSort(myarray[],pivot+1,hIndex)
+    
+    
+
+
+
 def main():
 
     a = [56, 74, 23, 48, 89, 5, 10, 1]
