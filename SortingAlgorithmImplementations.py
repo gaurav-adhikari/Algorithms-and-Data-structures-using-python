@@ -19,6 +19,8 @@ def bubbleSort(mylist):
     return mylist
 
 # Complexity O(nlog(n))
+
+
 def mergeSort(mylist):
 
     length = len(mylist)
@@ -57,6 +59,8 @@ def mergeSort(mylist):
     return mylist
 
 # complexity O(n^2)
+
+
 def selectionSort(myarray):
 
     for i in range(len(myarray)):
@@ -74,22 +78,38 @@ def selectionSort(myarray):
 
     return myarray
 
+# Helper function for Quicksort
+def quickSortPartitionFunction(myarray, lIndex, hIndex):
 
+    i = lIndex-1
+    pivot = myarray[hIndex]
 
+    for j in range(lIndex, hIndex):
 
+        if myarray[j] < pivot:
 
+            i+=1    
+            temp = myarray[i]
+            myarray[i] = myarray[j]
+            myarray[j] = temp
 
-def quickSort(myarray[],lIndex,hIndex):
+    temp=myarray[i+1]
+    myarray[i+1]=myarray[hIndex]
+    myarray[hIndex]=temp
 
-    if low<high:
-        
-        # pivot=quickSortPartitionFunction(myarray[],lIndex,hIndex)
+    return i+1
 
-        quickSort(myarray[],lIndex,pivot-1)
-        quickSort(myarray[],pivot+1,hIndex)
-    
-    
+# Complexity O(n^2) in worst case 
+def quickSort(myarray, lIndex, hIndex):
 
+    if lIndex < hIndex:
+
+        pivot = quickSortPartitionFunction(myarray, lIndex, hIndex)
+
+        quickSort(myarray, lIndex, pivot-1)
+        quickSort(myarray, pivot+1, hIndex)
+
+    return myarray
 
 
 def main():
@@ -102,6 +122,8 @@ def main():
 
     assert selectionSort(a) == [1, 5, 10, 23, 48, 56, 74, 89]
 
+    assert quickSort(a, 0, len(a)-1) == [1, 5, 10, 23, 48, 56, 74, 89]
+
     pass
 
 
@@ -113,5 +135,7 @@ if __name__ == "__main__":
             -> Bubble sort took about 0.066 seconds to complete
             -> Merge sort took about approx half the time as that of Bubble sort
             -> Divide and conquer solves a lot boiler-plate code 
-            -> Selection sort has the O(n^2) and is not the sorting algorithm of my choice.  
+            -> Selection sort has the O(n^2) and is not the sorting algorithm of my choice.
+            -> Quick sort performs well in average conditions
+
 '''
