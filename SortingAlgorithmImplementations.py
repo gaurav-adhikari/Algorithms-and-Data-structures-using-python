@@ -1,6 +1,5 @@
 # Implentation of Bubble sort in python
 
-
 # complexity O(n^2)
 def bubbleSort(mylist):
 
