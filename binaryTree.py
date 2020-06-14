@@ -1,16 +1,16 @@
 # Playing with Trees
 
 def simpleTree():
-    myTree = ['a',
-        ['b',
-            ['d','e']],
-        ['c' ,
-            ['f']] ]
+    simpleBinaryTree = ['15',
+        ['6',
+            ['5','7']],
+        ['10' ,
+            ['9']] ]
     
-    print(myTree)
-    print("Root: ",myTree[0])
-    print("left subtree ",myTree[1])
-    print("Right subtree",myTree[2])
+    print(simpleBinaryTree)
+    print("Root: ",simpleBinaryTree[0])
+    print("left subtree ",simpleBinaryTree[1])
+    print("Right subtree",simpleBinaryTree[2])
 
 
 def main():
