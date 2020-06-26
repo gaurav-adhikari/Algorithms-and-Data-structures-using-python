@@ -1,6 +1,5 @@
 # Playing with Trees
 
-
 def simpleBinaryTree():
     simpleBinaryTree = ['15',
                         ['6',
