@@ -74,6 +74,9 @@ class BinaryApproach2:
             newNode.rightWing = self.rightWing
             self.rightWing = newNode
 
+    def setRootVal(self,newRoot):
+        self.key=newRoot
+
     # Returns left wing of tree
     def leftChildGetter(self):
         return self.leftWing
