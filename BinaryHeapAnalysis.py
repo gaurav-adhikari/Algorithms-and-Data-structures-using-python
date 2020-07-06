@@ -15,7 +15,7 @@ class BinaryHeap:
 
             i = i//2
 
-    # Insertion in heap
+    # Inserts an element on the last node and then find the relativepotision of the element
     def insert(self, myItem):
         self.myHeapList.append(myItem)
         self.myHeapCount += 1
@@ -58,7 +58,7 @@ class BinaryHeap:
         self.myHeapList[1]=self.myHeapList[self.myHeapCount]
         self.myHeapCount-=1
         
-        # Remove the last element as it is not needed
+        #Remove the last element as it is not needed
         self.myHeapList.pop()
 
         # locate the actual position
@@ -80,7 +80,10 @@ class BinaryHeap:
         while(i>0):
             self.locateDown(i)
             i-=1
-
+    
+    # function that returns thesize of the element
+    def size(self):
+        return self.myHeapCount
 
 def main():
 
@@ -101,7 +104,7 @@ if __name__=='__main__':
 '''
 Conclusion
             -> the complexity is shorter than O(logn)
-            -> the smallest element is always on the root node
+        -> the smallest element is always on the root node
             -> trees are awesome
             -> OOPS is very beautiful 
 '''
