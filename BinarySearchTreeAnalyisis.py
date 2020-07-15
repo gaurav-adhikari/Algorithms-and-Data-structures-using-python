@@ -17,8 +17,71 @@ class BST:
         self.root = None
         self.length = 0
 
-    def length(self):
+    def size(self):
         return self.length
+
+    def putNode(self, key, val):
+
+        # Condtiion to check the root and if not available create one using the Node class
+        if self.root:
+            self.putHelper(key,vak,self.root)
+        else:
+            self.root=Node(key,val)
+        
+        self.size+=1
+        pass    
+
+    def putHelper(self, key,val,currentNode):
+
+        # Condition for the left child
+        if key<currentNode.key:
+            # check for the availability of left child
+
+            # if left child is present, recursively call this function
+            if currentNode.hasLeftChild():
+                self.putHelper(key,val,currentNode.leftChild)
+            
+            #if not,create a new left child Node  
+            else:
+                currentNode.leftChild=Node(key,val,parentNode=currentNode)
+        
+        # For the right child
+        else:
+            if currentNode.hasRightChild():
+                self.putHelper(key,val,currentNode.rightChild)
+            else:
+                currentNode.rightChild=Node(key,val,parentNode=currentNode)
+    
+        pass
+    
+
+    def getNode(self,key):
+
+        if self.root:
+            tempNode=getHelper(self,key,self.root)
+            
+            # return the dat- 
+            if tempNode:
+                return tempNode.data
+            else:
+                return None
+        else:
+            return None
+
+
+    def getHelper(self,key,currentNode):
+
+        
+        if currentNode==None:
+            return None
+
+        # check the key for each resulting Node
+        elif currentNode.key==key:
+            return currentNode
+        elif currentNode.key<key:
+            return self.getHelper(key,currentNode.leftChild)
+        else:
+            return self.getHelper(key,currentNode.rightChild)
 
 
 '''
@@ -36,8 +99,8 @@ left        right
 
 
 class Node:
-    
-    def __init__(self, key, data, leftChild, rightChild, parentNode):
+
+    def __init__(self, key, data, leftChild=None, rightChild=None, parentNode):
         self.key = key
         self.data = data
         self.leftchild = leftChild
@@ -45,24 +108,24 @@ class Node:
         self.parentNode = parentNode
 
     # Miscellaneous functions
-    
-    # function to check a given Node has any left child 
+
+    # function to check a given Node has any left child
     def hasLeftChild(self):
         return self.leftchild
 
-    # function to check a given Node has any right child 
+    # function to check a given Node has any right child
     def hasRightChild(self):
         return self.rightChild
 
-    # function to check a given has any child 
+    # function to check a given has any child
     def hasAnyChild(self):
         return self.leftchild or self.rightChild
 
-    #  function to check if both 
+    #  function to check if both
     def hasBothChildren(self):
         return self.leftchild and self.rightChild
 
-    # function to check if the functin is leaf 
+    # function to check if the functin is leaf
     def isLeaf(self):
         return not (self.leftchild or self.rightChild)
 
@@ -82,8 +145,6 @@ class Node:
             self.leftchild.parent = self
         if self.hasRightChild():
             self.rightChild = self
-        
-
 
 
 def main():
