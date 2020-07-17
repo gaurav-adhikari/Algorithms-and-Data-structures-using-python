@@ -82,6 +82,18 @@ class BST:
         else:
             return self.getHelper(key,currentNode.rightChild)
 
+    
+    # Overloading the "in" operator
+    def __contains__(self,key):
+        if self.getHelper(key,self.root):
+            return True
+        else:
+            return False
+
+    
+    
+
+
 
 '''
  Constructing a helper function
