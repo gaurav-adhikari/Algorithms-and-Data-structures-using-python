@@ -90,9 +90,16 @@ class BST:
         else:
             return False
 
-    
-    
+    def nodeDeletion(self, key):
 
+        # check the number of nodes in the tree
+
+        if self.size >1 :
+
+            deletionNode=getHelper(key,self.root)
+            # TODO
+            #  -> delete only after the selected node is identified by the key
+            
 
 
 '''
